@@ -25,11 +25,11 @@ namespace DefaultNamespace.Signals
 		}
 	}
 	
-	public class SpawnEnemySignal
+	public class SpawnEnemiesSignal
 	{
 		public Vector3 Coordinates { get; }
 		public EnemyData EnemyData { get; }
-		public SpawnEnemySignal(EnemyData enemyData, Vector3 coordinates)
+		public SpawnEnemiesSignal(EnemyData enemyData, Vector3 coordinates)
 		{
 			Coordinates = coordinates;
 			EnemyData = enemyData;
@@ -56,6 +56,10 @@ namespace DefaultNamespace.Signals
 		}
 	}
 	
+	public class StartLevelSignal
+	{
+	}
+	
 	public class GameStateChangedSignal
 	{
 		public GameState GameState { get; }
@@ -63,6 +67,24 @@ namespace DefaultNamespace.Signals
 		public GameStateChangedSignal(GameState gameState)
 		{
 			this.GameState = gameState;
+		}
+	}
+	
+	public class PlayerHitSignal
+	{
+		public PlayerHitSignal()
+		{
+			
+		}
+	}
+	
+	public class EnemyHitSignal
+	{
+		public EnemyData EnemyData { get; }
+
+		public EnemyHitSignal(EnemyData enemyData)
+		{
+			this.EnemyData = enemyData;
 		}
 	}
 }
