@@ -1,4 +1,3 @@
-
 using DefaultNamespace.StaticData;
 using UnityEngine;
 using Zenject;
@@ -9,10 +8,19 @@ namespace DefaultNamespace.Presenters
 	{
 		[Inject] 
 		private PlayerConfig playerConfig;
-		
-		private void Reset()
+
+		[Inject] 
+		private DiContainer diContainer;
+
+		private void Start()
 		{
-			var playerView = Instantiate(playerConfig.viewPrefab);
+			ResetPlayer();
+		}
+
+		private void ResetPlayer()
+		{
+			var playerView= diContainer.InstantiatePrefab(playerConfig.viewPrefab);
+			
 		}
 	}
 }

@@ -5,7 +5,7 @@ using Zenject;
 
 namespace DefaultNamespace.Presenters
 {
-	public class LevelPresenter : MonoBehaviour
+	public class LevelPresenter : MonoBehaviour, IInitializable
 	{
 		[Inject] 
 		private GameStateModel gameStateModel;
@@ -28,7 +28,12 @@ namespace DefaultNamespace.Presenters
 		private void CreateEnemy(EnemyLocation enemyLocation)
 		{
 			var enemyView = Instantiate(enemyLocation.enemyConfig.viewPrefab);
-			enemyView.transform.position = new Vector3(enemyLocation.startPosition.X, enemyLocation.startPosition.Y);
+			enemyView.transform.position = new Vector3(enemyLocation.startPosition.x, enemyLocation.startPosition.y);
+		}
+
+		public void Initialize()
+		{
+			Debug.Log("Init!!!");
 		}
 	}
 }
