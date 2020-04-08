@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80cc092724304ef7a8364728a5fca5b0, type: 3}
   m_Name: EnemyBConfig
   m_EditorClassIdentifier: 
-  viewPrefab: {fileID: 151674, guid: 92f66ccf06e6740098e34035524532a1, type: 3}
+  viewPrefab: {fileID: 151674, guid: 8162e17d1bb0b43d2a43e351f34eac78, type: 3}
   attackDamage: 2
   lifeAmount: 1
+  bulletConfig: {fileID: 11400000, guid: 4d65d51c779a94f30a91d5aa51433a1f, type: 2}

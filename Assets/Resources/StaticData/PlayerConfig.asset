@@ -17,8 +17,8 @@ MonoBehaviour:
   movementSpeed: 10
   movementTiltFactor: 3
   movementBoundary:
-    xMin: -4
-    xMax: 4
+    xMin: -8
+    xMax: 8
     zMin: -4
     zMax: -3
   viewPrefab: {fileID: 112598, guid: c7b6e75c63af64ca3aa5a192b796b1d6, type: 3}
