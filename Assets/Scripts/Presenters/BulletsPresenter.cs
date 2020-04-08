@@ -58,7 +58,7 @@ namespace DefaultNamespace.Presenters
 		private void RemoveBullet(BulletView bulletView)
 		{
 			bullets.Remove(bulletView);
-			Destroy(bulletView);
+			Destroy(bulletView.gameObject);
 		}
 		
 		private void OnSpawnBullet(SpawnBulletSignal spawnBulletSignal)
