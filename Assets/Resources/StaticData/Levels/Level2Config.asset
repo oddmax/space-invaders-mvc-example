@@ -10,18 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33d62439173f4bddac5e5e7feeb24fe5, type: 3}
-  m_Name: Level2Config
+  m_Name: Level3Config 1
   m_EditorClassIdentifier: 
   enemyInfos:
   - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
     startPosition: {x: -4, y: 7}
-  - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
+  - enemyConfig: {fileID: 11400000, guid: ff941376bd5bc4e598844047484ff4b8, type: 2}
     startPosition: {x: -2, y: 7}
   - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
     startPosition: {x: 0, y: 7}
   - enemyConfig: {fileID: 11400000, guid: ff941376bd5bc4e598844047484ff4b8, type: 2}
     startPosition: {x: -4, y: 5}
-  - enemyConfig: {fileID: 11400000, guid: ff941376bd5bc4e598844047484ff4b8, type: 2}
+  - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
     startPosition: {x: -2, y: 5}
   - enemyConfig: {fileID: 11400000, guid: ff941376bd5bc4e598844047484ff4b8, type: 2}
-    startPosition: {x: 0, y: 5}
+    startPosition: {x: -5, y: 3}
+  - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
+    startPosition: {x: -3, y: 3}
+  - enemyConfig: {fileID: 11400000, guid: ff941376bd5bc4e598844047484ff4b8, type: 2}
+    startPosition: {x: -1, y: 3}
+  - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
+    startPosition: {x: 1, y: 3}
