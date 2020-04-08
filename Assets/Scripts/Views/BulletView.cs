@@ -11,7 +11,8 @@ namespace DefaultNamespace
 
 		public BulletConfig Config { get; private set; }
 
-		public event Action<BulletConfig, Collider> OnCollide;
+		public event Action<BulletView, Collider> OnCollide;
+		public event Action<BulletView, Collider> OnCollideExit;
 
 		public void Init(BulletConfig bulletConfig)
 		{
@@ -20,7 +21,12 @@ namespace DefaultNamespace
 		
 		void OnTriggerEnter(Collider other)
 		{
-			OnCollide(Config, other);
+			OnCollide(this, other);
+		}
+		
+		void OnTriggerExit(Collider other)
+		{
+			OnCollideExit(this, other);
 		}
 	}
 }

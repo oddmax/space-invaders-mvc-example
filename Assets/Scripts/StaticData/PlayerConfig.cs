@@ -13,5 +13,7 @@ namespace DefaultNamespace.StaticData
 		public Boundary movementBoundary; 
 		
 		public GameObject viewPrefab;
+
+		public BulletConfig bulletConfig;
 	}
 }

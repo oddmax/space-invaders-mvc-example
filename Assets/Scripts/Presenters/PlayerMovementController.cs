@@ -1,4 +1,3 @@
-using Data;
 using DefaultNamespace.StaticData;
 using UnityEngine;
 using Zenject;
@@ -10,13 +9,10 @@ namespace DefaultNamespace.Presenters
         [Inject] 
         private PlayerConfig playerConfig;
         
-        public GameObject shot;         // bullet prefab
-        public Transform shotSpawn;     // the turret (bullet spawn location)
         public Rigidbody myRigidbody;   // reference to rigitbody
         
         public float smoothing = 5;     // this value is used for smoothing movement
         
-        private float nextFire = 0.0f;
         private Vector3 smoothDirection;// used to smooth out mouse and touch control
 
         // Use this for initialization
@@ -55,14 +51,6 @@ namespace DefaultNamespace.Presenters
             myRigidbody.rotation = Quaternion.Euler(0, 0, myRigidbody.velocity.x * -playerConfig.movementTiltFactor);
         }
 
-        void Update()
-        {
-            // Should we fire a bullet?
-            if ((Input.GetButton("Fire1") || Input.GetKeyDown(KeyCode.Space)) && Time.time > nextFire)
-            {
-                nextFire = Time.time + playerConfig.fireRate;
-                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-            }
-        }
+       
 	}
 }

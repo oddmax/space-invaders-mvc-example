@@ -1,3 +1,4 @@
+using DefaultNamespace.Signals;
 using DefaultNamespace.StaticData;
 using Models;
 using Zenject;
@@ -15,6 +16,10 @@ namespace DefaultNamespace
 			Container.BindInterfacesAndSelfTo<PlayerShipModel>().AsSingle();
 			Container.BindInterfacesAndSelfTo<SwarmModel>().AsSingle();
 			Container.BindInterfacesAndSelfTo<GameStateModel>().AsSingle();
+			
+			//Signals
+			Container.DeclareSignal<FirePressedSignal>();
+			Container.DeclareSignal<SpawnBulletSignal>();
 			
 			//Static data
 			Container.Bind<GameConfig>().FromScriptableObjectResource("StaticData/GameConfig").AsSingle();
