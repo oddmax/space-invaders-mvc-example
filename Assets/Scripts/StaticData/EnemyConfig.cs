@@ -7,5 +7,6 @@ namespace DefaultNamespace.StaticData
 		public GameObject viewPrefab;
 		public int attackDamage;
 		public int lifeAmount;
+		public BulletConfig bulletConfig;
 	}
 }

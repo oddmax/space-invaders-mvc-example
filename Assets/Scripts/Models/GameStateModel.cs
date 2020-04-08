@@ -41,9 +41,12 @@ namespace Models
 			}
 		}
 
+		public int LevelsAmount => gameConfig.levels.Length;
+
 		public LevelConfig GetCurrentLevelConfig()
 		{
 			return gameConfig.levels[CurrentLevelIndex];
 		}
+		
 	}
 }

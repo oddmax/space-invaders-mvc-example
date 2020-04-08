@@ -3,6 +3,7 @@ namespace Data
 	public enum GameState
 	{
 		MENU,
-		LEVEL
+		LEVEL,
+		GAME_OVER
 	}
 }

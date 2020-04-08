@@ -10,12 +10,13 @@ public class PlayerScoreModel : IInitializable
 
 	public void Initialize()
 	{
+		Score = new ReactiveProperty<int>(0);
 		Reset();
 	}
 
 	public void Reset()
 	{
-		Score = new ReactiveProperty<int>(0);
+		Score.Value = 0;
 	}
 }
 
