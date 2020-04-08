@@ -1,6 +1,7 @@
 using DefaultNamespace.Signals;
 using DefaultNamespace.StaticData;
 using Models;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -19,14 +20,20 @@ namespace DefaultNamespace.Presenters
 
 		[Inject] 
 		private DiContainer diContainer;
+		
+		[SerializeField]
+		public GameObject playerExplosion;
 
 		private PlayerView playerView;
 
 		private void Start()
 		{
-			ResetPlayer();
+			playerShipModel.IsDead.Where(isDead => isDead == true)
+				.Subscribe(_ => OnShipDestroy());
+			
+			signalBus.Subscribe<LevelChangedSignal>(ResetPlayer);
 		}
-
+		
 		private void ResetPlayer()
 		{
 			Destroy(playerView);
@@ -37,11 +44,17 @@ namespace DefaultNamespace.Presenters
 		{
 			var time = Time.time;
 			// Should we fire a bullet?
-			if ((Input.GetButton("Fire1") || Input.GetKeyDown(KeyCode.Space)) && playerShipModel.CanFire(time))
+			if ((Input.GetButton("Fire1") || Input.GetKeyDown(KeyCode.Space)) && playerShipModel.CanFire(time) && playerView != null)
 			{
 				playerShipModel.SetFireTime(time);
 				signalBus.Fire(new SpawnBulletSignal( playerConfig.bulletConfig, playerView.GetWeaponCoordinates(), playerView.GetRotation()));
 			}
+		}
+		
+		private void OnShipDestroy()
+		{
+			Destroy(playerView);
+			Instantiate(playerExplosion, playerView.transform.position, playerView.transform.rotation);
 		}
 	}
 }

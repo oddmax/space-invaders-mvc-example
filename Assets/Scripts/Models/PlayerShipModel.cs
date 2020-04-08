@@ -9,7 +9,8 @@ namespace Models
 	[UsedImplicitly]
 	public class PlayerShipModel : IInitializable
 	{
-		[Inject] public PlayerConfig playerConfig;
+		[Inject] 
+		public PlayerConfig playerConfig;
 
 		public ReactiveProperty<int> Hp { get; private set; }
 		public IReadOnlyReactiveProperty<bool> IsDead { get; private set; }
@@ -17,6 +18,11 @@ namespace Models
 		private float nextFire = 0.0f;
 
 		public void Initialize()
+		{
+			Reset();
+		}
+		
+		public void Reset()
 		{
 			Hp = new ReactiveProperty<int>(playerConfig.lifeAmount);
 			var hpProperty = Hp.Select(x => x <= 0);

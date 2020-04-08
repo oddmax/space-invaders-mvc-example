@@ -1,3 +1,5 @@
+using Data;
+using DefaultNamespace.Signals;
 using DefaultNamespace.StaticData;
 using JetBrains.Annotations;
 using Zenject;
@@ -10,11 +12,38 @@ namespace Models
 		[Inject]
 		private GameConfig gameConfig;
 		
-		public int currentLevelIndex;
+		[Inject]
+		private SignalBus signalBus;
+
+		private GameState state = GameState.MENU;
+		private int currentLevelIndex;
+		
+		public GameState State
+		{
+			get => state;
+			set
+			{
+				state = value;
+				signalBus.Fire(new GameStateChangedSignal(value));
+			}
+		}
+
+		public int CurrentLevelIndex
+		{
+			get => currentLevelIndex;
+			set
+			{
+				if(value < 0 || value >= gameConfig.levels.Length)
+					return;
+				
+				currentLevelIndex = value;
+				signalBus.Fire(new LevelChangedSignal(value));
+			}
+		}
 
 		public LevelConfig GetCurrentLevelConfig()
 		{
-			return gameConfig.levels[currentLevelIndex];
+			return gameConfig.levels[CurrentLevelIndex];
 		}
 	}
 }

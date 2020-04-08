@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyInfos:
   - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
-    startPosition: {x: 100, y: 100}
+    startPosition: {x: -4, y: 7}
   - enemyConfig: {fileID: 11400000, guid: fdca5b882fe5a4fe9b406fc064ce59fb, type: 2}
-    startPosition: {x: 150, y: 100}
+    startPosition: {x: -2, y: 7}
   - enemyConfig: {fileID: 11400000, guid: ff941376bd5bc4e598844047484ff4b8, type: 2}
-    startPosition: {x: 200, y: 100}
+    startPosition: {x: 0, y: 7}
   - enemyConfig: {fileID: 11400000, guid: ff941376bd5bc4e598844047484ff4b8, type: 2}
-    startPosition: {x: 250, y: 100}
+    startPosition: {x: -2, y: 5}

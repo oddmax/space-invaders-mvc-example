@@ -39,7 +39,6 @@ namespace DefaultNamespace.Presenters
 		
 		private void BulletViewOnOnCollideExit(BulletView bulletView, Collider other)
 		{
-			Debug.Log("tag = " + other.tag);
 			if (other.CompareTag("Boundary"))
 			{
 				RemoveBullet(bulletView);
