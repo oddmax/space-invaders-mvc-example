@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80cc092724304ef7a8364728a5fca5b0, type: 3}
   m_Name: EnemyAConfig
   m_EditorClassIdentifier: 
-  viewPrefab: {fileID: 0}
+  viewPrefab: {fileID: 151674, guid: 92f66ccf06e6740098e34035524532a1, type: 3}
   attackDamage: 1
   lifeAmount: 2

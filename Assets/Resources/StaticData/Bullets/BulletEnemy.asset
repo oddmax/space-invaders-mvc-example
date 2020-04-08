@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80cc092724304ef7a8364728a5fca5b0, type: 3}
-  m_Name: EnemyBConfig
+  m_Script: {fileID: 11500000, guid: 93b28854679d4096810169ac80048b61, type: 3}
+  m_Name: BulletEnemy
   m_EditorClassIdentifier: 
-  viewPrefab: {fileID: 0}
-  attackDamage: 2
-  lifeAmount: 1
+  viewPrefab: {fileID: 146826, guid: 874d5858aa705487188ceac9e4ccc4f1, type: 3}
+  speed: 12
