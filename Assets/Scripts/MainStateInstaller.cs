@@ -8,6 +8,8 @@ namespace DefaultNamespace
 	{
 		public override void InstallBindings()
 		{
+			SignalBusInstaller.Install(Container);
+			
 			//Models
 			Container.BindInterfacesAndSelfTo<PlayerScoreModel>().AsSingle();
 			Container.BindInterfacesAndSelfTo<PlayerShipModel>().AsSingle();
@@ -15,8 +17,8 @@ namespace DefaultNamespace
 			Container.BindInterfacesAndSelfTo<GameStateModel>().AsSingle();
 			
 			//Static data
-			Container.Bind<GameConfig>().FromScriptableObjectResource("StaticData/GameConfig.asset");
-			Container.Bind<PlayerConfig>().FromScriptableObjectResource("StaticData/PlayerConfig.asset");
+			Container.Bind<GameConfig>().FromScriptableObjectResource("StaticData/GameConfig").AsSingle();
+			Container.Bind<PlayerConfig>().FromScriptableObjectResource("StaticData/PlayerConfig").AsSingle();
 		}
 	}
 }
