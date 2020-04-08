@@ -30,11 +30,23 @@ namespace DefaultNamespace.Presenters
 
 		private void BulletViewOnOnCollide(BulletView bulletView, Collider other)
 		{
-			if (bulletView.CompareTag("Bullet") && other.CompareTag("Bullet"))
+			if (bulletView.CompareTag("Bullet") && other.CompareTag("EnemyBullet"))
 				return;
 			
-			//Destroy(other.gameObject);
-			//Destroy(gameObject);
+			if (bulletView.CompareTag("EnemyBullet") && other.CompareTag("Bullet"))
+				return;
+
+			if (bulletView.CompareTag("EnemyBullet") && other.CompareTag("Player"))
+			{
+				signalBus.Fire(new PlayerHitSignal());
+				RemoveBullet(bulletView);
+			}
+
+			if (bulletView.CompareTag("Bullet") && other.CompareTag("Enemy"))
+			{
+				signalBus.Fire(new EnemyHitSignal(other.GetComponent<EnemyView>().EnemyData));
+				RemoveBullet(bulletView);
+			}
 		}
 		
 		private void BulletViewOnOnCollideExit(BulletView bulletView, Collider other)
@@ -50,7 +62,7 @@ namespace DefaultNamespace.Presenters
 			for (int i = 0; i < bullets.Count; i++)
 			{
 				var bulletView = bullets[i];
-				bulletView.Rigidbody.velocity = transform.forward * bulletView.Config.speed;
+				bulletView.Rigidbody.velocity = bulletView.transform.forward * bulletView.Config.speed;
 			}
 		}
 		

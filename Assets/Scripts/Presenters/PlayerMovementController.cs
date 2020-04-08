@@ -29,7 +29,6 @@ namespace DefaultNamespace.Presenters
             pos = Camera.main.ScreenToWorldPoint(pos);
             Vector3 origin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            Vector2 currentPosition = new Vector3(pos.x, pos.z);
             Vector3 directionRaw = pos - origin;
 
             Vector3 direction = directionRaw.normalized;
