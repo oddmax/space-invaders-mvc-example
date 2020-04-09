@@ -51,8 +51,7 @@ vHas references to Views
 * Micro controller responsible to execute one action and update all necessary models based on result of this action
 
 
-
 # What's next
 
-I didn't have time but next step would be to add basic Unit testing for Model classes.
-Another thing which I would like to do is to recreate the same example but with clean ECS architecture.
+* I didn't have time but next step would be to add basic Unit testing for Model classes.
+* Another thing which I would like to do is to recreate the same example but with clean ECS architecture.
