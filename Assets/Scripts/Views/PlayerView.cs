@@ -8,6 +8,8 @@ namespace DefaultNamespace
 		[SerializeField]
 		private Transform weaponCoordinates; // the turret (bullet spawn location)
 
+		[SerializeField] 
+		public Rigidbody Rigidbody;
 
 		public Vector3 GetWeaponCoordinates()
 		{

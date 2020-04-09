@@ -1,3 +1,4 @@
+using System;
 using Data;
 using DefaultNamespace.Signals;
 using DefaultNamespace.StaticData;
@@ -26,6 +27,8 @@ namespace DefaultNamespace.Presenters
 		public GameObject playerExplosion;
 
 		private PlayerView playerView;
+		
+		private PlayerShipMovementSystem playerMovementSystem;
 
 		private void Start()
 		{
@@ -35,6 +38,8 @@ namespace DefaultNamespace.Presenters
 			//signalBus.Subscribe<LevelChangedSignal>(ResetPlayer);
 			signalBus.Subscribe<PlayerHitSignal>(OnPlayerHit);
 			signalBus.Subscribe<GameStateChangedSignal>(OnGameSateChange);
+			
+			playerMovementSystem = new PlayerShipMovementSystem(playerConfig);
 		}
 		
 		private void OnGameSateChange(GameStateChangedSignal gameStateChangedSignal)
@@ -62,7 +67,13 @@ namespace DefaultNamespace.Presenters
 			
 			playerView = diContainer.InstantiatePrefab(playerConfig.viewPrefab).GetComponent<PlayerView>();
 		}
-		
+
+		private void FixedUpdate()
+		{
+			if(playerView != null)
+				playerMovementSystem.Update(playerView);
+		}
+
 		void Update()
 		{
 			var time = Time.time;
