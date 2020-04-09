@@ -1,10 +1,12 @@
 using Data;
 using DefaultNamespace.Signals;
+using JetBrains.Annotations;
 using Models;
 using Zenject;
 
 namespace DefaultNamespace.Commands
 {
+	[UsedImplicitly]
 	public class EnemyHitCommand : Command
 	{
 		[Inject] 
@@ -14,7 +16,7 @@ namespace DefaultNamespace.Commands
 		private GameStateModel gameStateModel;
 		
 		[Inject] 
-		private SwarmModel swarmModel;
+		private EnemiesSwarmModel swarmModel;
 		
 		[Inject] 
 		private SignalBus signalBus;

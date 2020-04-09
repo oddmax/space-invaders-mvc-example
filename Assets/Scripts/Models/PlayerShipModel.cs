@@ -10,7 +10,7 @@ namespace Models
 	public class PlayerShipModel : IInitializable
 	{
 		[Inject] 
-		public PlayerConfig playerConfig;
+		private PlayerConfig playerConfig;
 
 		public ReactiveProperty<int> Hp { get; set; }
 		public IReadOnlyReactiveProperty<bool> IsDead { get; private set; }

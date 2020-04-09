@@ -15,7 +15,7 @@ namespace DefaultNamespace.Presenters
 		private GameStateModel gameStateModel;
 		
 		[Inject] 
-		private SwarmModel swarmModel;
+		private EnemiesSwarmModel swarmModel;
 		
 		[Inject] 
 		private PlayerShipModel playerShipModel;

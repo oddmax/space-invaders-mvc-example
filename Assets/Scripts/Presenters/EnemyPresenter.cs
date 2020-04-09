@@ -11,7 +11,7 @@ namespace DefaultNamespace.Presenters
 	public class EnemyPresenter : MonoBehaviour
 	{
 		[Inject] 
-		private SwarmModel swarmModel;
+		private EnemiesSwarmModel swarmModel;
 		
 		[Inject] 
 		private SignalBus signalBus;

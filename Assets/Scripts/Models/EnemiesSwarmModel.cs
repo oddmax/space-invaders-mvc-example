@@ -11,7 +11,7 @@ using Zenject;
 namespace Models
 {
 	[UsedImplicitly]
-	public class SwarmModel : IInitializable, IDisposable
+	public class EnemiesSwarmModel : IInitializable, IDisposable
 	{
 		[Inject] 
 		private SignalBus signalBus;

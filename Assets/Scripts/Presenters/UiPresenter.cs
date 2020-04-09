@@ -36,8 +36,6 @@ namespace DefaultNamespace.Presenters
 			playerScoreModel.Score.SubscribeToText(scoreText);
 			playerShipModel.Hp.SubscribeToText(livesText);
 
-			
-
 			restartButton.onClick.AddListener(OnRestartClick);
 		}
 

@@ -1,11 +1,13 @@
 using Data;
 using DefaultNamespace.Commands;
 using DefaultNamespace.Signals;
+using JetBrains.Annotations;
 using Models;
 using Zenject;
 
 namespace Commands
 {
+	[UsedImplicitly]
 	public class PlayerHitCommand : Command
 	{
 		[Inject] 

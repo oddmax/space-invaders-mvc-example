@@ -17,7 +17,7 @@ namespace DefaultNamespace
 			//Models
 			Container.BindInterfacesAndSelfTo<PlayerScoreModel>().AsSingle();
 			Container.BindInterfacesAndSelfTo<PlayerShipModel>().AsSingle();
-			Container.BindInterfacesAndSelfTo<SwarmModel>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemiesSwarmModel>().AsSingle();
 			Container.BindInterfacesAndSelfTo<GameStateModel>().AsSingle();
 
 			//Signals
