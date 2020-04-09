@@ -8,9 +8,9 @@ Supports different levels with possibility to arrange enemies and their types.
 
 # Main structure
 
-Uses very simple MVC/MVP architecture with some extra flavor of UniRX for nicer update of UI (ReactiveProperties) and Command pattern
-Uses Zenject of inversion of control and dependencies injections
-Uses SignalBus from Zenject to decouple communication between different components
+* Uses very simple MVC/MVP architecture with some extra flavor of UniRX for nicer update of UI (ReactiveProperties) and Command pattern
+* Uses Zenject of inversion of control and dependencies injections
+* Uses SignalBus from Zenject to decouple communication between different components
 
 ## Models 
 * Is Plain C# class
