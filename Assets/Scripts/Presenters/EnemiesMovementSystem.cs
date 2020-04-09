@@ -80,12 +80,9 @@ namespace DefaultNamespace.Presenters
 					return Vector3.right;
 				case MovementDirection.Left:
 					return Vector3.left;
-				break;
 			}
-
 			return Vector3.zero;
 		}
 
-		
 	}
 }

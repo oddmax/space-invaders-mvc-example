@@ -37,7 +37,6 @@ namespace DefaultNamespace.Presenters
 				return;
 			
 			var randomEnemyIndex = Random.Range(0, enemyViews.Count - 1);
-			Debug.Log(">>>" + randomEnemyIndex);
 			var enemyView = enemyViews[randomEnemyIndex];
 			signalBus.Fire(new SpawnBulletSignal(enemyView.EnemyData.Config.bulletConfig, enemyView.GetWeaponCoordinates(), enemyView.GetRotation()));
 			nextShootingTime = nextShootingTime + Random.Range(1, 2);

@@ -39,7 +39,6 @@ namespace DefaultNamespace.Commands
 				{
 					signalBus.Fire(new ChangeLevelSignal(gameStateModel.CurrentLevelIndex+1));
 				}
-				
 			}
 		}
 	}
