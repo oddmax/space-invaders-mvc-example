@@ -1,6 +1,8 @@
 # Space Invaders MVC example game
 A simple space invaders games demonstrating MVC-like architecture based on Zenject and UniRX with Command pattern
 
+*Built with Unity 2019.3.3f1*
+
 # Funcionality
 
 Supports different enemy types with different damage and lives values.
