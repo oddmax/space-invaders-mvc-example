@@ -1,16 +1,17 @@
+using DefaultNamespace;
 using DefaultNamespace.StaticData;
 using UnityEngine;
 
-namespace DefaultNamespace.Presenters
+namespace Systems
 {
-	public class PlayerShipMovementSystem
+	public class PlayerMovementController
     {
         private PlayerConfig playerConfig;
         
         private float smoothing = 5;     // this value is used for smoothing movement
         private Vector3 smoothDirection;// used to smooth out mouse and touch control
 
-        public PlayerShipMovementSystem(PlayerConfig playerConfig)
+        public PlayerMovementController(PlayerConfig playerConfig)
         {
             this.playerConfig = playerConfig;
         }

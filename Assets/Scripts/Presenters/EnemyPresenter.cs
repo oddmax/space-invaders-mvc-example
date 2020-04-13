@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Systems;
 using Data;
 using DefaultNamespace.Signals;
 using Models;
@@ -21,8 +22,8 @@ namespace DefaultNamespace.Presenters
 		
 		private readonly List<EnemyView> enemies = new List<EnemyView>();
 		
-		private EnemiesAttackSystem enemiesAttackSystem;
-		private EnemiesMovementSystem enemiesMovementSystem;
+		private EnemiesAttackController enemiesAttackController;
+		private EnemiesMovementController enemiesMovementController;
 		
 		private void Start()
 		{
@@ -31,8 +32,8 @@ namespace DefaultNamespace.Presenters
 			signalBus.Subscribe<StartLevelSignal>(OnStartLevelSignal);
 			signalBus.Subscribe<GameStateChangedSignal>(OnGameSateChange);
 			
-			enemiesAttackSystem = new EnemiesAttackSystem(signalBus, enemies);
-			enemiesMovementSystem = new EnemiesMovementSystem(enemies);
+			enemiesAttackController = new EnemiesAttackController(signalBus, enemies);
+			enemiesMovementController = new EnemiesMovementController(enemies);
 		}
 
 		private void OnGameSateChange(GameStateChangedSignal gameStateChangedSignal)
@@ -45,8 +46,8 @@ namespace DefaultNamespace.Presenters
 
 		private void OnStartLevelSignal()
 		{
-			enemiesAttackSystem.Start();
-			enemiesMovementSystem.Start();
+			enemiesAttackController.Start();
+			enemiesMovementController.Start();
 		}
 
 		private void OnSpawnEnemy(SpawnEnemiesSignal spawnEnemiesSignal)
@@ -90,8 +91,8 @@ namespace DefaultNamespace.Presenters
 
 		private void Update()
 		{
-			enemiesAttackSystem.Update();
-			enemiesMovementSystem.Update();
+			enemiesAttackController.Update();
+			enemiesMovementController.Update();
 		}
 	}
 }

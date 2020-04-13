@@ -1,4 +1,5 @@
 using System;
+using Systems;
 using Data;
 using DefaultNamespace.Signals;
 using DefaultNamespace.StaticData;
@@ -28,7 +29,7 @@ namespace DefaultNamespace.Presenters
 
 		private PlayerView playerView;
 		
-		private PlayerShipMovementSystem playerMovementSystem;
+		private PlayerMovementController playerMovementController;
 
 		private void Start()
 		{
@@ -39,7 +40,7 @@ namespace DefaultNamespace.Presenters
 			signalBus.Subscribe<PlayerHitSignal>(OnPlayerHit);
 			signalBus.Subscribe<GameStateChangedSignal>(OnGameSateChange);
 			
-			playerMovementSystem = new PlayerShipMovementSystem(playerConfig);
+			playerMovementController = new PlayerMovementController(playerConfig);
 		}
 		
 		private void OnGameSateChange(GameStateChangedSignal gameStateChangedSignal)
@@ -71,7 +72,7 @@ namespace DefaultNamespace.Presenters
 		private void FixedUpdate()
 		{
 			if(playerView != null)
-				playerMovementSystem.Update(playerView);
+				playerMovementController.Update(playerView);
 		}
 
 		void Update()

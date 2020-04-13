@@ -1,18 +1,19 @@
 using System.Collections.Generic;
+using DefaultNamespace;
 using DefaultNamespace.Signals;
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace.Presenters
+namespace Systems
 {
-	public class EnemiesAttackSystem
+	public class EnemiesAttackController
 	{
 		private SignalBus signalBus;
 		private List<EnemyView> enemyViews;
 
 		private float nextShootingTime;
 
-		public EnemiesAttackSystem(SignalBus signalBus, List<EnemyView> enemies)
+		public EnemiesAttackController(SignalBus signalBus, List<EnemyView> enemies)
 		{
 			this.signalBus = signalBus;
 			enemyViews = enemies;

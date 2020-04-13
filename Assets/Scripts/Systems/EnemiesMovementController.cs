@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
-namespace DefaultNamespace.Presenters
+namespace Systems
 {
 	public enum MovementDirection
 	{
@@ -11,7 +12,7 @@ namespace DefaultNamespace.Presenters
 		Down
 	}
 
-	public class EnemiesMovementSystem
+	public class EnemiesMovementController
 	{
 		private class EnemyMovement
 		{
@@ -36,7 +37,7 @@ namespace DefaultNamespace.Presenters
 			new EnemyMovement {Direction = MovementDirection.Down, Time = 1f},
 		};
 
-		public EnemiesMovementSystem(List<EnemyView> enemies)
+		public EnemiesMovementController(List<EnemyView> enemies)
 		{
 			enemyViews = enemies;
 		}
